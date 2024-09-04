@@ -1,10 +1,11 @@
+import { Container } from "@mui/material";
 import { MenuExercise } from "./pages/MenuExercise";
 
 export const App = () => {
   return (
-    <div>
+    <Container>
       <h1>Form App</h1>
       <MenuExercise />
-    </div>
+    </Container>
   );
 };

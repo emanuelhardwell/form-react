@@ -38,7 +38,7 @@ export const FilterElement = <T extends {}>({
         required: selectProps?.required ? "El nombre es requerido." : undefined,
       }}
       control={control}
-      name={(selectProps?.multiple ? "nombres" : "nombre") as Path<T>}
+      name={(selectProps?.multiple ? "bodyParts" : "bodyPart") as Path<T>}
       render={({ field: { value, onChange } }) => (
         <FormControl fullWidth>
           <InputLabel id="age-label">Age</InputLabel>

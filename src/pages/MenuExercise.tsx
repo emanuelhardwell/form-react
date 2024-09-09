@@ -6,6 +6,8 @@ import { initAvailabilityFilters } from "../utils/constants";
 import { Card, CardContent } from "@mui/material";
 
 export const MenuExercise = () => {
+  const [loading, setLoading] = useState(false);
+
   const formAvailability = useForm<
     AvailabilityFilters,
     any,
@@ -14,7 +16,6 @@ export const MenuExercise = () => {
     defaultValues: initAvailabilityFilters,
   });
 
-  const [loading, setLoading] = useState(false);
   const { watch } = formAvailability;
   const filters = watch();
 
@@ -22,7 +23,8 @@ export const MenuExercise = () => {
     setLoading(true);
 
     try {
-      console.log("onSearch");
+      const queryObj = { ...filters };
+      console.log(queryObj);
     } catch (error) {
       console.log(error);
     } finally {

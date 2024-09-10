@@ -44,10 +44,10 @@ export const Filters: FC<FiltersProps> = ({
             selectProps={{
               multiple: true,
               variant: "outlined",
-              error: Boolean(errors.name),
+              error: Boolean(errors.bodyParts),
               required: true,
             }}
-            helperText={errors.name?.message?.toString() || ""}
+            helperText={errors.bodyParts?.message?.toString() || ""}
             control={control}
           />
         </Grid>

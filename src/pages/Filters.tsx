@@ -2,8 +2,8 @@ import { FC } from "react";
 import { AvailabilityFilters } from "../interfaces/ExerciseInterface";
 import { SubmitHandler, UseFormReturn } from "react-hook-form";
 import { Button, CircularProgress, Grid } from "@mui/material";
-import { FilterElement } from "../components/FilterElement/FilterElement";
 import { Search } from "@mui/icons-material";
+import { FilterBodyPart } from "../components/FilterElement/FilterBodyPart";
 
 interface FiltersProps {
   onSearch: (values: AvailabilityFilters) => void;
@@ -40,7 +40,7 @@ export const Filters: FC<FiltersProps> = ({
 
       <Grid container>
         <Grid item xs={12} md={3}>
-          <FilterElement
+          <FilterBodyPart
             selectProps={{
               multiple: true,
               variant: "outlined",

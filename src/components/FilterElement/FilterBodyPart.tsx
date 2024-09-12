@@ -8,7 +8,7 @@ import {
 } from "@mui/material";
 import { Control, Controller, FieldValues, Path } from "react-hook-form";
 
-interface FilterElementProps<T extends FieldValues> {
+interface FilterBodyPartProps<T extends FieldValues> {
   helperText: string;
   selectProps?: SelectProps<string | string[]>;
   control: Control<T>;
@@ -27,11 +27,11 @@ const bodyParts = [
   "waist",
 ];
 
-export const FilterElement = <T extends {}>({
+export const FilterBodyPart = <T extends {}>({
   helperText,
   selectProps,
   control,
-}: FilterElementProps<T>) => {
+}: FilterBodyPartProps<T>) => {
   return (
     <Controller
       rules={{

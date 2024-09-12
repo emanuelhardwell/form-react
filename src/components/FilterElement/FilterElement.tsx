@@ -35,19 +35,19 @@ export const FilterElement = <T extends {}>({
   return (
     <Controller
       rules={{
-        required: selectProps?.required ? "El nombre es requerido." : undefined,
+        required: selectProps?.required ? "The body parts are required." : undefined,
       }}
       control={control}
       name={(selectProps?.multiple ? "bodyParts" : "bodyPart") as Path<T>}
       render={({ field: { value, onChange } }) => (
         <FormControl fullWidth>
-          <InputLabel id="age-label">Age</InputLabel>
+          <InputLabel id="bodyParts-label">Body parts</InputLabel>
           <Select
             {...selectProps}
-            labelId="age-label"
-            id="age"
+            labelId="bodyParts-label"
+            id="bodyParts"
             value={value || (selectProps?.multiple ? [] : "")}
-            label="Age"
+            label="Body parts"
             onChange={(e) => onChange(e.target.value)}
           >
             {bodyParts.map((bodyPart) => (

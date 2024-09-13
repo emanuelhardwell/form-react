@@ -8,7 +8,7 @@ import {
 } from "@mui/material";
 import { Control, Controller, FieldValues, Path } from "react-hook-form";
 
-interface FilterElementProps<T extends FieldValues> {
+interface FilterBodyPartProps<T extends FieldValues> {
   helperText: string;
   selectProps?: SelectProps<string | string[]>;
   control: Control<T>;
@@ -27,27 +27,27 @@ const bodyParts = [
   "waist",
 ];
 
-export const FilterElement = <T extends {}>({
+export const FilterBodyPart = <T extends {}>({
   helperText,
   selectProps,
   control,
-}: FilterElementProps<T>) => {
+}: FilterBodyPartProps<T>) => {
   return (
     <Controller
       rules={{
-        required: selectProps?.required ? "El nombre es requerido." : undefined,
+        required: selectProps?.required ? "The body parts are required." : undefined,
       }}
       control={control}
       name={(selectProps?.multiple ? "bodyParts" : "bodyPart") as Path<T>}
       render={({ field: { value, onChange } }) => (
         <FormControl fullWidth>
-          <InputLabel id="age-label">Age</InputLabel>
+          <InputLabel id="bodyParts-label">Body parts</InputLabel>
           <Select
             {...selectProps}
-            labelId="age-label"
-            id="age"
+            labelId="bodyParts-label"
+            id="bodyParts"
             value={value || (selectProps?.multiple ? [] : "")}
-            label="Age"
+            label="Body parts"
             onChange={(e) => onChange(e.target.value)}
           >
             {bodyParts.map((bodyPart) => (
